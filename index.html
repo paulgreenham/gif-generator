@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GIF Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+</head>
+<body>
+
+    <div id="main-container">
+        <div class="search">
+            <input type="text" placeholder="Get gif about...">
+            <button id="search">Search</button>
+            <button id="clear-results">Clear Results</button>
+        </div>
+        <div id="image-container"></div>
+        <hr>
+        <h1>FAVORITE GIFS</h1>
+        <button id="clear-favorites">Clear All</button>
+        <div id="favorites"></div>
+    </div>
+
+
+    <script id="results-template" type="text/x-handlebars-template">
+        {{#each urls}}
+        <div class="result">
+            <iframe src="{{this}}"></iframe>
+            <button class="add">Add</button>
+        </div>
+        {{/each}}
+    </script>
+
+    <script id="favorite-template" type="text/x-handlebars-template">
+        <div class="favorite">
+            <iframe src="{{url}}"></iframe>
+            <button class="remove">Remove</button>
+        </div>
+    </script>
+
+    <script src="logic.js"></script>
+    <script src="render.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

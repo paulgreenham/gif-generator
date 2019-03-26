@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+}
+
+#main-container {
+    margin: 10px;
+    width: 100vw;
+    height: 100vh;
+}
+
+#image-container, #favorites {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.result, .favorite {
+    margin: 20px;
+}
+
+h1 {
+    font-size: 16px;
+}
