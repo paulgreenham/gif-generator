@@ -17,7 +17,7 @@ const convertQueryString = function(str){
 const getGifs = function(queryTerms){
 $.ajax({
     method: "GET",
-    url: `http://api.giphy.com/v1/gifs/search?q=${convertQueryString(queryTerms)}&api_key=Cn0UdyG81KmxMaUCm93gc9Tx9cxyNRwp&limit=6`,
+    url: `http://api.giphy.com/v1/gifs/search?q=${convertQueryString(queryTerms)}&api_key=Cn0UdyG81KmxMaUCm93gc9Tx9cxyNRwp&limit=24`,
     success: function(data){
         const embedURLs = data.data.map(d => d.embed_url)
         render.displayResults(embedURLs)
